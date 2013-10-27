@@ -1,71 +1,64 @@
 #!/usr/bin/env python
-import cherrypy
-import settings
-import loginController 
-import loginView
-import dbsqlite
+import bottlesession
+import bottle
+import redis
 import json
+from datetime import datetime
+import settings
 
-class login(object):
-    def index(self):
-        view = loginView.loginView()
-        return view.login()
-    index.exposed = True
-
+app = bottle.app()
+app.r = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
 
-### Login Call
-    def login(self, login="", password="", error=""):
-        controller = loginController.loginController()
-        path ="/"
-        if (controller.verifyUserPassword(login, password)):
-            cherrypy.session['roles'] = 'view';
-            cherrypy.session['username'] = login;
-            path="/roles"
-        view = loginView.loginView()
-        return view.forwarder(path)
-    login.exposed = True
+####################### 
+## HTTP-Methods
+# Static Files
+@bottle.route('/JS/<path:path>')
+def callback(path):
+    print(path)
+    return bottle.static_file(path, root="JS")
+
+@bottle.route('/CSS/<path:path>')
+def callback(path):
+    return bottle.static_file(path, root="CSS")
+
+@bottle.route('/pix/<path:path>')
+def pix(path):
+    return bottle.static_file(path, root="pix")
+
+@bottle.route('/HTML/partials/<path:path>')
+def callback(path):
+    return bottle.static_file(path, root="HTML/partials")
+
+    
+
+#############
+#   AppIndex
+#      Serve Application Body
+#
+@bottle.get('/')
+@bottle.get('/look')
+def appIndex():
+    return bottle.static_file("/look.html", root="HTML")
 
 
-    def roles(self):
-        view = loginView.loginView()
-        roleView = ""
-        if cherrypy.session.get('username') is None:
-            roleView  = view.forwarder("/")
-        else:
-            roleView  = view.roleView(cherrypy.session.get('username'))
-        return roleView 
-    roles.exposed = True
+##########
+# Works
+#
+@bottle.get('/works/<client>')
+def works(client):
+        js = app.r.lrange(client, 0, 10)
+        # Build JSON from List with join and string concat to save time
+        js = "[" + ",".join(js) + "]"
+        return js
+
+@bottle.post('/works/<client>/<tasks>')
+def works(client, tasks):
+        app.r.lpush(client, tasks)
+        counter = app.r.hincrby('version', client, 1)
+        return counter
 
 
-class look(object):
-	def __init__(self):
-		pass
-	def index(self):
-		""" Show chooser Menu """
+bottle.debug(True)
+bottle.run(app=app,host='localhost',port=8888,reloader=True)
 
-		return "Template.render(channelList=List)"
-	index.exposed = True
-
-
-class works(object):
-	def __init__(self):
-		self.db = dbsqlite.dbsqlite("db/look.db")
-
-	def default(self, client=None):
-		""" Show works """
-		if client is None:
-			return "Supply a client"
-		auth = self.db.select("authorization ", "where username = '" + cherrypy.session.get('username') + "'" );
-		print(auth)
-		works = self.db.select("works ", "where clientId = (select id from clients where client = '" + client + "')" );
-		return json.dumps(works)
-	default.exposed = True
-
-
-cherrypy.tree.mount(login(), '/', settings.configPath)
-cherrypy.tree.mount(look(), '/look', settings.configPath)
-cherrypy.tree.mount(works(), '/works', settings.configPath)
-
-cherrypy.engine.start()
-cherrypy.engine.block()
