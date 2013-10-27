@@ -1,12 +1,14 @@
 #!/usr/bin/env python
-import bottlesession
+
 import bottle
-import redis
+import plyvel
 import json
+import redis
 from datetime import datetime
 import settings
 
 app = bottle.app()
+
 app.r = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
 
@@ -16,19 +18,19 @@ app.r = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=Tr
 @bottle.route('/JS/<path:path>')
 def callback(path):
     print(path)
-    return bottle.static_file(path, root="JS")
+    return bottle.static_file(path, root="UI/JS")
 
 @bottle.route('/CSS/<path:path>')
 def callback(path):
-    return bottle.static_file(path, root="CSS")
+    return bottle.static_file(path, root="UI/CSS")
 
 @bottle.route('/pix/<path:path>')
 def pix(path):
-    return bottle.static_file(path, root="pix")
+    return bottle.static_file(path, root="UI/pix")
 
 @bottle.route('/HTML/partials/<path:path>')
 def callback(path):
-    return bottle.static_file(path, root="HTML/partials")
+    return bottle.static_file(path, root="UI/HTML/partials")
 
     
 
@@ -39,12 +41,14 @@ def callback(path):
 @bottle.get('/')
 @bottle.get('/look')
 def appIndex():
-    return bottle.static_file("/look.html", root="HTML")
+    return bottle.static_file("UI/HTML/look.html", root="")
 
 
 ##########
 # Works
 #
+
+# get works for client
 @bottle.get('/works/<client>')
 def works(client):
         js = app.r.lrange(client, 0, 10)
@@ -52,6 +56,7 @@ def works(client):
         js = "[" + ",".join(js) + "]"
         return js
 
+# add work
 @bottle.post('/works/<client>/<tasks>')
 def works(client, tasks):
         app.r.lpush(client, tasks)
@@ -61,4 +66,3 @@ def works(client, tasks):
 
 bottle.debug(True)
 bottle.run(app=app,host='localhost',port=8888,reloader=True)
-
