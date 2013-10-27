@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+
+<link rel="stylesheet" href="static/presentee.css" type="text/css" />
+<script type="text/javascript" src="static/jquery-1.7.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<!--<script type="text/javascript" src="static/presentee.js"></script> -->
+<script type="text/javascript" src="static/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="static/jquery.mousewheel.min.js" ></script> 
+<script type="text/javascript" src="static/jquery.rightClick.js" ></script>
+<script type="text/javascript" src="static/jquery.timer.js" ></script>
+</head>
+
+
+<body>
+
+<div>
+
+<b>Yay</b>
+
+</div>
+</body>
+</html>
