@@ -1,0 +1,306 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"M",
+				"mandant"
+			],
+			[
+				"posi",
+				"background-position"
+			],
+			[
+				"pass",
+				"passphraseStored	(global, instance)"
+			],
+			[
+				"JS",
+				"jsons"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "look.html",
+			"settings":
+			{
+				"buffer_size": 5864,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "JS/directives.js",
+			"settings":
+			{
+				"buffer_size": 463,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/ale/Projects/UI/Look/JS/directive.js",
+		"/home/ale/Projects/UI/Look/look.html",
+		"/home/ale/Projects/UI/Look/screen.css",
+		"/home/ale/Projects/Python/lib/loginController.pyc",
+		"/home/ale/Projects/Python/lib/loginModel.py",
+		"/home/ale/Projects/Python/lib/loginModel.pyc",
+		"/home/ale/Projects/Python/timey/timey.py",
+		"/home/ale/Projects/Python/lib/dbsqlite.py",
+		"/home/ale/Projects/Python/presentee/lib/channels.py",
+		"/home/ale/Projects/Python/presentee/lib/presenteeModel.py",
+		"/home/ale/test.c",
+		"/home/ale/test3.c",
+		"/home/ale/py.test.py",
+		"/home/ale/select.py",
+		"/home/ale/untitled.py",
+		"/home/ale/test200.py",
+		"/home/ale/examples.py",
+		"/home/ale/Projects/Haskell/isupper.hs",
+		"/home/ale/Projects/Scala/Test.scala",
+		"/home/ale/Projects/Python/reservation/lib/reservationController.py",
+		"/home/ale/Projects/Python/reservation/templates/reservationMask.html",
+		"/home/ale/Projects/Python/presentee/presentee.py",
+		"/home/ale/Projects/UI/index.html",
+		"/home/ale/Projects/Haskell/test.hs",
+		"/home/ale/Projects/Haskell/test",
+		"/home/ale/Projects/Layout/personal/i.html",
+		"/home/ale/Projects/Python/reservation/static/reservation/reservationMenu.js",
+		"/home/ale/Projects/Python/reservation/reservation.py",
+		"/home/ale/Projects/Python/presentee/templates/presentee.tpl",
+		"/home/ale/Projects/Layout/personal/data/stylesheets/render.css",
+		"/home/ale/Projects/UI/controllers.js",
+		"/home/ale/Projects/Layout/personal/Portfolio Igniter_files/render.css",
+		"/home/ale/Projects/Layout/personal/Portfolio Igniter.html",
+		"/home/ale/AdminLayout/admin.html",
+		"/home/ale/Downloads/glyphicons-sprite/index.html",
+		"/home/ale/Downloads/glyphicons-sprite/css/glyphicons.css",
+		"/home/ale/AdminLayout/style.css",
+		"/home/ale/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/ale/Projects/Python/presentee/templates/default.tpl",
+		"/home/ale/Projects/Python/presentee/templates/menu.tpl",
+		"/home/ale/Projects/Python/presentee/lib/presenteeView.py",
+		"/home/ale/Projects/Python/presentee/presentee.conf",
+		"/home/ale/Projects/Python/presentee/settings.py",
+		"/home/ale/Projects/Python/reservation/reservation.conf",
+		"/home/ale/Projects/Python/presentee/templates/demo.html",
+		"/home/ale/Projects/Python/presentee/lib/presenteeController.py",
+		"/home/ale/Projects/Python/presentee/static/js/main.js",
+		"/home/ale/Projects/Python/presentee/static/js/chooser.py",
+		"/home/ale/Projects/Python/ilove/test.py",
+		"/home/ale/Projects/Python/ilove/templates/style.css",
+		"/home/ale/Projects/Python/ilove/templates/template.html",
+		"/home/ale/Projects/Python/ilove/static/loadOnScroll.js",
+		"/home/ale/Projects/Python/lib/tmplt.py",
+		"/home/ale/Projects/Python/ilove/ilove.py",
+		"/home/ale/Projects/Python/ilove/static/style.css",
+		"/home/ale/Projects/Python/reservation/static/reservationMenu.js",
+		"/home/ale/Projects/Python/ilove/db/storage_alessandromeyer.json",
+		"/home/ale/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/ale/Projects/Python/reservation/static/reservation/reservation.css",
+		"/home/ale/Projects/Python/reservation/templates/booking.html",
+		"/home/ale/Projects/Python/reservation/starter.sh"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"stat",
+			"PORTFOLIO",
+			"Portfolio Igniter_files",
+			"list",
+			"block",
+			"onclick.\\.jpg",
+			"(onclick).(\\))",
+			"/(onclick).(\\))/",
+			"/(onclick\\=\\\"javascript).(\\))/",
+			"/(onclick=\"javascript).(\\))/",
+			"/(onclick=\"javascript\\:pageTracker\\.\\_trackPageview)(.\\))/",
+			"/(onclick=\"javascript\\:pageTracker\\.\\_trackPageview)(.\\)/",
+			"/onclick=\"javascript:pageTracker._trackPageview(.)/",
+			"onclick=\"javascript:pageTracker._trackPageview(",
+			"onclick=\"javascript:pageTracker._trackPageview(*)",
+			"$",
+			"url",
+			"body",
+			"safe",
+			"oswald",
+			"theme\"",
+			"theme:",
+			"createt",
+			"staticmethod",
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"data",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "look.html",
+					"settings":
+					{
+						"buffer_size": 5864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								70,
+								70
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "JS/directives.js",
+					"settings":
+					{
+						"buffer_size": 463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								459,
+								459
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
