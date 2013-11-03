@@ -19,10 +19,10 @@ document.app = angular.module('look', []).config(function($interpolateProvider){
         var xhr = new XMLHttpRequest();
         xhr.open('GET', '/works/EKS' , true);
         xhr.onload = function(e) {
-            $scope.menuItems = this.response //JSON.parse(this.response);
+            $scope.works = JSON.parse(this.response)
+            console.log($scope.works)
             $scope.$apply()
         }
-
 
          
         $scope.init = function() {

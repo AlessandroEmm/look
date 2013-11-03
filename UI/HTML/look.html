@@ -4,6 +4,7 @@
 	<title>Look.</title>
 
 	<link rel="stylesheet" type="text/css" href="/CSS/layout.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/CSS/nav.css" media="screen" />
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 <script src="JS/angular.min.js"></script>
 <script src="JS/directives.js"></script>
@@ -12,18 +13,55 @@
 </head>
 
 <body ng-app="look">
+
+
+
+<nav>
+		<ul>
+		<li><img style="height:29px"src="PIX/logo.png"> </li>
+		<li> <div style="width:60px"></div> </li>
+
+			    <li id="search">
+			        <form action="" method="get">
+			            <input type="text" name="search_text" id="search_text" placeholder="Search" ng-model="search"/>
+			            <input type="button" name="search_button" id="search_button"></a>
+			        </form>
+			    </li>
+			<li class="drop">
+				<a href="#">You</a>
+				
+				<div class="dropdownContain">
+					<div class="dropOut">
+						<div class="triangle"></div>
+						<ul>
+							<li>Plan</li>
+							<li>Account Settings</li>
+							<li>Switch Account</li>
+							<li>Sign Out</li>
+
+						</ul>
+					</div>
+				</div>
+			
+			</li>
+			<li><a href="#">Help</a></li>
+		</ul>
+</nav>
+
+
 <div ng-controller="work" ng-init="init()">
 
-<div ng-repeat="work in works">
+<div ng-repeat="work in works | filter:search">
 	<div class="colmask threecol" >
 		<div class="colmid">
 			<div class="colleft">
-				<div class="col1">
+				<div class="col1" style="height:250px">
 					<!-- Column 1 start -->
 					<br />
 					<p>{{work.workdesc}}</p>
 										<p>
-						<span style="color:green;font-weight:800;" ng-if="work.expenses">{{work.expenses}}</span>
+									
+						<span ng-if="work.expenses"><b>Spesen:</b> <br /> {{work.expenses}}</span>
 					</p>
 
 					<!-- Column 1 end -->
@@ -31,7 +69,7 @@
 				<div class="col2">
 					<!-- Column 2 start -->
 					<h3>{{work.date}} <br /> {{work.title}}</h3>
-					<p>The CSS used for this layout is 100% valid and hack free. To overcome Internet Explorer's broken box model, no horizontal padding or margins are used in conjunction with a width. </p>
+				
 
 
 					<!-- Column 2 end -->
@@ -44,6 +82,7 @@
 					<!-- Column 3 start -->
 	</div></div></div></div>
 </div>
+
 </div>
 
 

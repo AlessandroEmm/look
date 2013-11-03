@@ -24,9 +24,9 @@ def callback(path):
 def callback(path):
     return bottle.static_file(path, root="UI/CSS")
 
-@bottle.route('/pix/<path:path>')
+@bottle.route('/PIX/<path:path>')
 def pix(path):
-    return bottle.static_file(path, root="UI/pix")
+    return bottle.static_file(path, root="UI/PIX")
 
 @bottle.route('/HTML/partials/<path:path>')
 def callback(path):
@@ -51,16 +51,23 @@ def appIndex():
 # get works for client
 @bottle.get('/works/<client>')
 def works(client):
-        js = app.r.lrange(client, 0, 10)
+        js = app.r.lrange(client, 0, 1000)
         # Build JSON from List with join and string concat to save time
         js = "[" + ",".join(js) + "]"
         return js
 
 # add work
+@bottle.get('/works/<client>/<tasks>')
+def works(client, tasks):
+        app.r.lpush(client, tasks)
+        #counter = app.r.hincrby('version', client, 1)
+        return "Worked!"
+
+# add work
 @bottle.post('/works/<client>/<tasks>')
 def works(client, tasks):
         app.r.lpush(client, tasks)
-        counter = app.r.hincrby('version', client, 1)
+        #counter = app.r.hincrby('version', client, 1)
         return counter
 
 
